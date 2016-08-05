@@ -1,6 +1,8 @@
 ﻿body {
     padding-top: 50px;
     padding-bottom: 20px;
+    background-color: black;
+    color: white;
 }
 
 /* Set padding to keep content from hitting the edges */
@@ -21,4 +23,103 @@ input,
 select,
 textarea {
     max-width: 280px;
+}
+
+.redButton {
+    background-color: red;
+    border-color: black;
+    color: white;
+}
+
+.redButton:hover {
+    background-color: white;
+    color: black;
+}
+
+/*Index page*/
+
+.jumbotron {
+    margin-top: 20px;
+    background-image: url('Images/dragon.jpg');
+    background-size: cover;
+    height: 500px;
+}
+
+/*About Me page*/
+
+#selfie {
+    float: left;
+    margin-right: 15px;
+    margin-bottom: 15px;
+    height: 300px;
+    width: 300px;
+}
+
+/*Contact page*/
+
+#raven {
+    height: 100px;
+    border-radius: 50%;
+    float: right;
+}
+
+#contact {
+    background-image: url('Images/scroll.png');
+    background-size: 100%;
+    height: 575px;
+    color: black;
+    background-color: black;
+    background-repeat: no-repeat;
+}
+
+#address {
+}
+
+#email {
+    color: black;
+}
+
+#email:hover {
+    color: red;
+    text-decoration: none;
+}
+
+/*Posts page*/
+
+/*img {
+    width: 100%;
+    display: block;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}*/
+
+.whiteBorder {
+    border: 3px solid white;
+    overflow-wrap: break-word;
+    overflow: auto;
+    height: 700px;
+}
+
+.scroll::-webkit-scrollbar-track
+{
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.9);
+	border-radius: 10px;
+	background-color: black;
+}
+
+.scroll::-webkit-scrollbar
+{
+	width: 12px;
+	background-color: #F5F5F5;
+}
+
+.scroll::-webkit-scrollbar-thumb
+{
+	border-radius: 10px;
+	background-color: #D62929;
+	background-image: -webkit-linear-gradient(90deg,
+											  transparent,
+											  rgba(0, 0, 0, 0.4) 50%,
+											  transparent,
+											  transparent)
 }
