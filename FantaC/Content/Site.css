@@ -25,6 +25,8 @@ textarea {
     max-width: 280px;
 }
 
+/*Across website*/
+
 .redButton {
     background-color: red;
     border-color: black;
@@ -35,6 +37,8 @@ textarea {
     background-color: white;
     color: black;
 }
+
+/*Nav Bar*/
 
 /*Index page*/
 
@@ -86,12 +90,12 @@ textarea {
 
 /*Posts page*/
 
-/*img {
+.postImage {
     width: 100%;
     display: block;
     margin-top: 15px;
     margin-bottom: 15px;
-}*/
+}
 
 .whiteBorder {
     border: 3px solid white;

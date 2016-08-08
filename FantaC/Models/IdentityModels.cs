@@ -1,4 +1,5 @@
-﻿using System.Data.Entity;
+﻿using System.Collections;
+using System.Data.Entity;
 using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNet.Identity;
@@ -29,5 +30,10 @@ namespace FantaC.Models
         {
             return new ApplicationDbContext();
         }
+
+        public DbSet<Post> Post { get; set; }
+
+        public DbSet<Comment> Comment { get; set; }
+        public IEnumerable ApplicationUsers { get; internal set; }
     }
 }

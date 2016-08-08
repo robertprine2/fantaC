@@ -11,10 +11,8 @@ namespace FantaC.Models
         [Key]
         public string PostId { get; set; }
 
-        [Required]
         public string UserId { get; set; }
 
-        [Required]
         public string UserName { get; set; }
 
         [Required]
@@ -29,5 +27,9 @@ namespace FantaC.Models
         public string PostContent { get; set; }
 
         public virtual List<Comment> PostComments { get; set; }
+
+        public virtual ApplicationUser User { get; set; }
+
+        public string ApplicationUserId { get; set; }
     }
 }
