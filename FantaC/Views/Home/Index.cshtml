@@ -1,4 +1,6 @@
-﻿@{
+﻿@model IEnumerable<FantaC.Models.Post>
+
+@{
     ViewBag.Title = "Home Page";
 }
 
@@ -8,22 +10,27 @@
     <p><a href="/home/about" class="btn btn-primary btn-lg redButton">Learn more &dagger;</a></p>
 </div>
 
+@* Look into why the modal is null / how to pull in a model from a different controller later on
 <div class="row">
     <div class="col-md-12">
         <h2>Recent Entries</h2>
-        <p>
-            <!--I got an internship at an amazing company recently. Now this is very exciting news, I know, but it is also very intimidating because I have little knowledge about how to do the work they need. My limited background includes what I have learned over the past three months in HTML, CSS, and Javascript while this company is using ASP.NET and C# to create their product. This means that I must venture out into the vastly wide web to discover what I can about these new (to me) frontiers.-->
-            Hello fine tavern folk! If you are willing to listen, I can tell you a story of epic proportions that envolves conquests, failures, and intrigue. It is the detailed account of how I, Robert the Conqueror, traversed the web of the spider Entranit, defeated the dastardly dragon Seasharrp, and won the hand of princess Oonaqui.
-        </p>
-        <p>
-            It all started when I was a novice fighter. I decided that I had had enough of suffering mediocrity and went to train under Sean the Quick at the Ooseaif Butkmp. He gave me Gavaskrrpt, the Dagger of the Front.
-        </p>
-        <p>
-            Soon after my training I ran into my good friend Andre the Well Known who told me about a beautiful princess named Oonaqui. I was entrigued and felt that I had the ability to start making a name for myself, so I ventured to the land of Aplikacion in the hope that I could get more clues of the princess's location.
-        </p>
-        <p>
-            Upon arrival to Aplikacion, I saw a wizard named Alan the Wise
-        </p>
-        <p><a class="btn btn-default redButton" href="@Url.Action("Details", "Post")">Read More &dagger;</a></p>
+
+        @{          
+            var m = Model.ToArray();
+            int count = @Model.Count();
+        }
+
+        @for (var i = count; i > (count - 3); i--)
+        {
+            <h4>@Html.DisplayFor(modelItem => m[i].PostName)</h4>
+            <h4>Written by: @Html.DisplayFor(modelItem => m[i].UserName)</h4>
+            <img src="@Html.DisplayFor(modelItem => m[i].PostImage)" class="postImage" />
+
+            <div class="postContent">
+                
+                <p>@Html.DisplayFor(modelItem => m[i].PostContent)</p>
+                <p><a class="btn btn-default redButton" href="@Url.Action("Details", "Post")">Read More &dagger;</a></p>
+            </div>
+        }
     </div>
-</div>
+ </div>*@
