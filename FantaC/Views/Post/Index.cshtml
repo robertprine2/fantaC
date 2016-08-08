@@ -4,20 +4,26 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Fireside Stories</h2>
-
-<img src="~/Content/Images/fire.jpg" />
+<div class="row">
+    <div class="col-md-12">
+        <div class="jumbotron" id="postIndexJumbotron">
+            <h2>Fireside Stories</h2>
+            <p><a href=@Url.Action("index", "Create") class="btn btn-primary btn-lg redButton">Create a Post &dagger;</a></p>
+        </div>
+    </div>
+</div>
 
 @foreach (var item in Model)
 {
     <div class="row">
-        <div class="col-md-8 whiteBorder scroll">
+        <div class="col-md-12 whiteBorder scroll">
             <div class="postName">
                 <h4>@Html.DisplayFor(modelItem => item.PostName)</h4>
                 <h4>Written by: @Html.DisplayFor(modelItem => item.UserName)</h4>
-                <img src="@Html.DisplayFor(modelItem => item.PostImage)" />
+                <img src="@Html.DisplayFor(modelItem => item.PostImage)" class="postImage" />
             </div>
             <div class="postContent">
+                @*Look into using pre tags if they can be formatted for keeping line breaks.*@
                 <p>@Html.DisplayFor(modelItem => item.PostContent)</p>
                 <p>
                     @Html.ActionLink("Edit", "Edit", new { id = item.PostId }) |
@@ -26,28 +32,5 @@
                 </p>
             </div>
         </div>
-}
-        <div class="col-md-4 whiteBorder scroll">
-
-            <p>
-                @Html.ActionLink("Create New", "Create")
-            </p>
-
-            @*<h4>Comments</h4>
-            <!--Comments attached to this post-->
-            @foreach (var comment in item.PostComments)
-            {
-                <h5>@Html.DisplayFor(modelItem => comment.UserName)</h5>
-                <h5>@Html.DisplayFor(modelItem => comment.CommentSubject)</h5>
-                <p>@Html.DisplayFor(modelItem => comment.CommentContent)</p>
-                <p>
-                    @Html.ActionLink("Edit", "Edit", new { id = comment.CommentId }) |
-                    @Html.ActionLink("Details", "Details", new { id = comment.CommentId }) |
-                    @Html.ActionLink("Delete", "Delete", new { id = comment.CommentId })
-                </p>
-            }
-
-            @Html.Partial("AddComment", item.NewComment)*@
-
-        </div>
     </div>
+}

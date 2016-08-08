@@ -202,6 +202,15 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201608052012350_InitialCreate.cs" />
+    <Compile Include="Migrations\201608052012350_InitialCreate.Designer.cs">
+      <DependentUpon>201608052012350_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201608081736150_textarea.cs" />
+    <Compile Include="Migrations\201608081736150_textarea.Designer.cs">
+      <DependentUpon>201608081736150_textarea.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Comment.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -286,6 +295,14 @@
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201608052012350_InitialCreate.resx">
+      <DependentUpon>201608052012350_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201608081736150_textarea.resx">
+      <DependentUpon>201608081736150_textarea.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

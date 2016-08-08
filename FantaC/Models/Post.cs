@@ -24,12 +24,11 @@ namespace FantaC.Models
         public string PostImage { get; set; }        
 
         [Required]
+        [DataType(DataType.MultilineText)]
         public string PostContent { get; set; }
 
         public virtual List<Comment> PostComments { get; set; }
 
         public virtual ApplicationUser User { get; set; }
-
-        public string ApplicationUserId { get; set; }
     }
 }

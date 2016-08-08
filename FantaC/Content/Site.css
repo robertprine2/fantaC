@@ -42,7 +42,7 @@ textarea {
 
 /*Index page*/
 
-.jumbotron {
+#mainJumbotron {
     margin-top: 20px;
     background-image: url('Images/dragon.jpg');
     background-size: cover;
@@ -88,13 +88,19 @@ textarea {
     text-decoration: none;
 }
 
-/*Posts page*/
+/*Post/Index page*/
+#postIndexJumbotron{
+    background: url('Images/fire.jpg') no-repeat center center fixed;
+    background-size: cover;
+    height: 500px;
+}
 
 .postImage {
-    width: 100%;
+    width: 50%;
+    height: 500px;
+    float: left;
     display: block;
-    margin-top: 15px;
-    margin-bottom: 15px;
+    margin: 15px;
 }
 
 .whiteBorder {
@@ -126,4 +132,12 @@ textarea {
 											  rgba(0, 0, 0, 0.4) 50%,
 											  transparent,
 											  transparent)
+}
+
+.postContentForm {
+    height: 300px !important; 
+}
+
+.postContent p {
+    margin-top: 25px;
 }

@@ -80,3 +80,6 @@ C:\Users\rober_000\Desktop\C#\fantaC\FantaC\bin\Microsoft.Owin.Security.Microsof
 C:\Users\rober_000\Desktop\C#\fantaC\FantaC\obj\Debug\FantaC.csprojResolveAssemblyReference.cache
 C:\Users\rober_000\Desktop\C#\fantaC\FantaC\obj\Debug\FantaC.dll
 C:\Users\rober_000\Desktop\C#\fantaC\FantaC\obj\Debug\FantaC.pdb
+C:\Users\rober_000\Desktop\C#\fantaC\FantaC\obj\Debug\FantaC.Migrations.InitialCreate.resources
+C:\Users\rober_000\Desktop\C#\fantaC\FantaC\obj\Debug\FantaC.csproj.GenerateResource.Cache
+C:\Users\rober_000\Desktop\C#\fantaC\FantaC\obj\Debug\FantaC.Migrations.textarea.resources
