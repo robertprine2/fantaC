@@ -71,34 +71,42 @@ namespace FantaC.Controllers
         {
             // makes the user information accessable
             ApplicationUser user = System.Web.HttpContext.Current.GetOwinContext().GetUserManager<ApplicationUserManager>().FindById(System.Web.HttpContext.Current.User.Identity.GetUserId());
+
             try
             {
-                // makes a post id that is 472893 plus however many posts 
-                // there are that is 10 digits long with 0s in front to 
-                // fill in the remaining digits
-                string postId = (472893 + (db.Post.Count())).ToString().PadLeft(10, '0');
-
-                // fills all the information about the post into the post
-                // variable
-                var post = new Post
+                if (ModelState.IsValid)
                 {
-                    PostId = postId,
-                    UserId = user.Id,
-                    UserName = user.UserName,
-                    PostName = model.PostName,
-                    PostSubject = model.PostSubject,
-                    PostImage = model.PostImage,
-                    PostContent = model.PostContent
-                };
+                    // makes a post id that is 472893 plus however many posts 
+                    // there are that is 10 digits long with 0s in front to 
+                    // fill in the remaining digits
+                    string postId = (472893 + (db.Post.Count())).ToString().PadLeft(10, '0');
 
-                // adds the post variable to the database on the Post table
-                // and saves the changes
-                db.Post.Add(post);
-                db.SaveChanges();
+                    // fills all the information about the post into the post
+                    // variable
+                    var post = new Post
+                    {
+                        PostId = postId,
+                        UserId = user.Id,
+                        UserName = user.UserName,
+                        PostName = model.PostName,
+                        PostSubject = model.PostSubject,
+                        PostImage = model.PostImage,
+                        PostContent = model.PostContent
+                    };
+
+                    // adds the post variable to the database on the Post table
+                    // and saves the changes
+                    db.Post.Add(post);
+                    db.SaveChanges();
+
+                    // auto generated code that doesn't seem to work...?
+                    // ViewBag.UserId = new SelectList(db.ApplicationUsers, "Id", "Email", post.UserId);
+                }
 
                 // sends the user back to /post
                 return RedirectToAction("Index");
             }
+
             catch
             {
                 return View();
@@ -117,7 +125,9 @@ namespace FantaC.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.UserId = new SelectList(db.ApplicationUsers, "Id", "Email", post.UserId);
+
+            // auto generated code that doesn't seem to work...?
+            // ViewBag.UserId = new SelectList(db.ApplicationUsers, "Id", "Email", post.UserId);
             return View(post);
         }
 
@@ -134,7 +144,9 @@ namespace FantaC.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.UserId = new SelectList(db.ApplicationUsers, "Id", "Email", post.UserId);
+
+            // auto generated code that doesn't seem to work...?
+            // ViewBag.UserId = new SelectList(db.ApplicationUsers, "Id", "Email", post.UserId);
             return View(post);
         }
 

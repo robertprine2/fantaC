@@ -4,66 +4,50 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<h2>Fireside Stories</h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.User.Email)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.UserName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.PostName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.PostSubject)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.PostImage)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.PostContent)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.ApplicationUserId)
-        </th>
-        <th></th>
-    </tr>
+<img src="~/Content/Images/fire.jpg" />
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.User.Email)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.UserName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.PostName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.PostSubject)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.PostImage)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.PostContent)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ApplicationUserId)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.PostId }) |
-            @Html.ActionLink("Details", "Details", new { id=item.PostId }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.PostId })
-        </td>
-    </tr>
+@foreach (var item in Model)
+{
+    <div class="row">
+        <div class="col-md-8 whiteBorder scroll">
+            <div class="postName">
+                <h4>@Html.DisplayFor(modelItem => item.PostName)</h4>
+                <h4>Written by: @Html.DisplayFor(modelItem => item.UserName)</h4>
+                <img src="@Html.DisplayFor(modelItem => item.PostImage)" />
+            </div>
+            <div class="postContent">
+                <p>@Html.DisplayFor(modelItem => item.PostContent)</p>
+                <p>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.PostId }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.PostId }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.PostId })
+                </p>
+            </div>
+        </div>
 }
+        <div class="col-md-4 whiteBorder scroll">
 
-</table>
+            <p>
+                @Html.ActionLink("Create New", "Create")
+            </p>
+
+            @*<h4>Comments</h4>
+            <!--Comments attached to this post-->
+            @foreach (var comment in item.PostComments)
+            {
+                <h5>@Html.DisplayFor(modelItem => comment.UserName)</h5>
+                <h5>@Html.DisplayFor(modelItem => comment.CommentSubject)</h5>
+                <p>@Html.DisplayFor(modelItem => comment.CommentContent)</p>
+                <p>
+                    @Html.ActionLink("Edit", "Edit", new { id = comment.CommentId }) |
+                    @Html.ActionLink("Details", "Details", new { id = comment.CommentId }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = comment.CommentId })
+                </p>
+            }
+
+            @Html.Partial("AddComment", item.NewComment)*@
+
+        </div>
+    </div>
