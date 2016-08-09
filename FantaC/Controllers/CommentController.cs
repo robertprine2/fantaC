@@ -48,7 +48,7 @@ namespace FantaC.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(string id, [Bind(Include = "CommentSubject,CommentContent")] Comment model)
+        public void Create(string id, [Bind(Include = "CommentSubject,CommentContent")] Comment model)
         {
             if (ModelState.IsValid)
             {
@@ -68,10 +68,11 @@ namespace FantaC.Controllers
 
                 db.Comment.Add(comment);
                 db.SaveChanges();
-                return RedirectToAction("../Post/Details/" + id);
+                
+                //return RedirectToAction("../Post/Details/" + id);
             }
 
-            return View(model);
+            //return View(model);
         }
 
         // GET: Comment/Edit/5
@@ -128,7 +129,7 @@ namespace FantaC.Controllers
             Comment comment = db.Comment.Find(id);
             db.Comment.Remove(comment);
             db.SaveChanges();
-            return RedirectToAction("Index");
+            return RedirectToAction("../Post/Index");
         }
 
         protected override void Dispose(bool disposing)

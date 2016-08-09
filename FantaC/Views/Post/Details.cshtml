@@ -6,8 +6,6 @@
 
 <h2>Details</h2>
 
-<h2>Details</h2>
-
 <div class="row">
     <div class="col-md-8 whiteBorder scroll">
         <div class="postName">
@@ -33,6 +31,9 @@
                     @Html.ActionLink("Delete", "../Comment/Delete", new { id = comment.CommentId })
                 </p>
         }
+
+        <p id="createPostButton">@Html.Action("Create", "Comment", new { id = Model.PostId })</p>
+
         <!--Comments attached to this post-->
         @*@=Html.RenderAction("Create", "Comments", new { postId = Model.PostId });*@
         @*@Html.Partial("Comments")*@
