@@ -6,69 +6,28 @@
 
 <h2>Details</h2>
 
-<div>
-    <h4>Post</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.User.Email)
-        </dt>
+<h2>Details</h2>
 
-        <dd>
-            @Html.DisplayFor(model => model.User.Email)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.UserName)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.UserName)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.PostName)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.PostName)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.PostSubject)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.PostSubject)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.PostImage)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.PostImage)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.PostContent)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.PostContent)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.ApplicationUserId)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.ApplicationUserId)
-        </dd>
-
-    </dl>
+<div class="row">
+    <div class="col-md-8 whiteBorder scroll">
+        <div class="postName">
+            <h4>@Html.DisplayFor(model => model.PostName)</h4>
+            <h4>Written by: @Html.DisplayFor(model => model.UserName)</h4>
+            <img src="@Html.DisplayFor(model => model.PostImage)" />
+        </div>
+        <div class="postContent">
+            <p>@Html.DisplayFor(model => model.PostContent)</p>
+        </div>
+    </div>
+    <div class="col-md-4 whiteBorder scroll">
+        <h4>Comments</h4>
+        <!--Comments attached to this post-->
+        @*@=Html.RenderAction("Create", "Comments", new { postId = Model.PostId });*@
+        @*@Html.Partial("AddComment", Model.NewComment)*@
+    </div>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.PostId }) |
+    @*@Html.ActionLink("Add a Comment", "Create", "Comment")*@
+    @Html.ActionLink("Comment", "Create", "Comment", new { id = Model.PostId }, null) | 
     @Html.ActionLink("Back to List", "Index")
 </p>

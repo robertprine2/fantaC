@@ -27,5 +27,9 @@ namespace FantaC.Models
 
         [Required]
         public string CommentContent { get; set; }
+
+        public virtual ApplicationUser User { get; set; }
+
+        public virtual Post Post { get; set; }
     }
 }
