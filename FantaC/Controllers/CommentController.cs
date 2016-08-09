@@ -68,7 +68,7 @@ namespace FantaC.Controllers
 
                 db.Comment.Add(comment);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("../Post/Details/" + id);
             }
 
             return View(model);
