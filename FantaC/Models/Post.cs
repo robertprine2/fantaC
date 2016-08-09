@@ -16,14 +16,18 @@ namespace FantaC.Models
         public string UserName { get; set; }
 
         [Required]
+        [Display(Name ="Post Title")]
         public string PostName { get; set; }
 
         [Required]
+        [Display(Name = "Post Subject")]
         public string PostSubject { get; set; }
 
+        [Display(Name = "Post Image Link")]
         public string PostImage { get; set; }        
 
         [Required]
+        [Display(Name = "Post Content")]
         [DataType(DataType.MultilineText)]
         public string PostContent { get; set; }
 

@@ -38,6 +38,10 @@ textarea {
     color: black;
 }
 
+.alignRight {
+    text-align: right;
+}
+
 /*Nav Bar*/
 
 /*Index page*/
@@ -93,6 +97,10 @@ textarea {
     background: url('Images/fire.jpg') no-repeat center center fixed;
     background-size: cover;
     height: 500px;
+}
+
+#createPostButton {
+    margin-top: 200px;
 }
 
 .postImage {

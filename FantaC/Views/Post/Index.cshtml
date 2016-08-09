@@ -8,7 +8,7 @@
     <div class="col-md-12">
         <div class="jumbotron" id="postIndexJumbotron">
             <h2>Fireside Stories</h2>
-            <p><a href=@Url.Action("index", "Create") class="btn btn-primary btn-lg redButton">Create a Post &dagger;</a></p>
+            <p id="createPostButton"><a href=@Url.Action("index", "Post/Create") class="btn btn-primary btn-lg redButton">Create a Post &dagger;</a></p>
         </div>
     </div>
 </div>
@@ -27,10 +27,11 @@
                 <p>@Html.DisplayFor(modelItem => item.PostContent)</p>
 
                 <!--I got an internship at an amazing company recently. Now this is very exciting news, I know, but it is also very intimidating because I have little knowledge about how to do the work they need. My limited background includes what I have learned over the past three months in HTML, CSS, and Javascript while this company is using ASP.NET and C# to create their product. This means that I must venture out into the vastly wide web to discover what I can about these new (to me) frontiers.-->
-                <p>
-                    @Html.ActionLink("Edit", "Edit", new { id = item.PostId }) |
+                <p class="alignRight">
+                <a href=@Url.Action("Details", new { id = item.PostId }) class="btn btn-primary btn-lg redButton">Listen &dagger;</a>
+                    @*@Html.ActionLink("Edit", "Edit", new { id = item.PostId }) |
                     @Html.ActionLink("Details", "Details", new { id = item.PostId }) |
-                    @Html.ActionLink("Delete", "Delete", new { id = item.PostId })
+                    @Html.ActionLink("Delete", "Delete", new { id = item.PostId })*@
                 </p>
             </div>
         </div>

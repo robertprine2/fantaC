@@ -9,7 +9,7 @@
     @Html.AntiForgeryToken()
 
     <div class="form-horizontal">
-        <h4>Posts</h4>
+        <h4>Create a Post</h4>
         
         <div class="form-group">
             @Html.LabelFor(model => model.PostName, htmlAttributes: new { @class = "control-label col-md-2" })
@@ -45,15 +45,11 @@
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Create" class="btn btn-default" />
+                <input type="submit" value="Create &dagger;" class="btn btn-default redButton" />
             </div>
         </div>
     </div>
 }
-
-<div>
-    @Html.ActionLink("Back to List", "Index")
-</div>
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
