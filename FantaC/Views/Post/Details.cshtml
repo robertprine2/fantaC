@@ -21,9 +21,21 @@
     </div>
     <div class="col-md-4 whiteBorder scroll">
         <h4>Comments</h4>
+
+        @foreach (var comment in Model.PostComments)
+            {
+            <h5>@Html.DisplayFor(modelItem => comment.UserName)</h5>
+                <h5>@Html.DisplayFor(modelItem => comment.CommentSubject)</h5>
+                <p>@Html.DisplayFor(modelItem => comment.CommentContent)</p>
+                <p>
+                    @Html.ActionLink("Edit", "Edit", new { id = comment.CommentId }) |
+                    @Html.ActionLink("Details", "Details", new { id = comment.CommentId }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = comment.CommentId })
+                </p>
+        }
         <!--Comments attached to this post-->
         @*@=Html.RenderAction("Create", "Comments", new { postId = Model.PostId });*@
-        @*@Html.Partial("AddComment", Model.NewComment)*@
+        @*@Html.Partial("Comments")*@
     </div>
 </div>
 <p>
