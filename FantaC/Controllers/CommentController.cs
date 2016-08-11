@@ -48,7 +48,7 @@ namespace FantaC.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public void Create(string id, [Bind(Include = "CommentSubject,CommentContent")] Comment model)
+        public ActionResult Create(string id, [Bind(Include = "CommentSubject,CommentContent")] Comment model)
         {
             if (ModelState.IsValid)
             {
@@ -68,11 +68,11 @@ namespace FantaC.Controllers
 
                 db.Comment.Add(comment);
                 db.SaveChanges();
-                
-                //return RedirectToAction("../Post/Details/" + id);
+
+                return RedirectToAction("Details", "Post", new { id = id });
             }
 
-            //return View(model);
+            return View(model);
         }
 
         // GET: Comment/Edit/5

@@ -27,6 +27,10 @@ textarea {
 
 /*Across website*/
 
+img {
+    width: 100%;
+}
+
 .redButton {
     background-color: red;
     border-color: black;
@@ -58,7 +62,7 @@ textarea {
 #selfie {
     float: left;
     margin-right: 15px;
-    margin-bottom: 15px;
+    margin-bottom: 5px;
     height: 300px;
     width: 300px;
 }
@@ -148,4 +152,10 @@ textarea {
 
 .postContent p {
     margin-top: 25px;
+}
+
+/*Comment Create*/
+
+.displayBlock {
+    display: block;
 }

@@ -1,15 +1,14 @@
 ﻿@model FantaC.Models.Post
 
 @{
-    ViewBag.Title = "Details";
+    ViewBag.Title = @Html.DisplayFor(model => model.PostName);
 }
 
-<h2>Details</h2>
+<h2>@Html.DisplayFor(model => model.PostName)</h2>
 
 <div class="row">
     <div class="col-md-8 whiteBorder scroll">
         <div class="postName">
-            <h4>@Html.DisplayFor(model => model.PostName)</h4>
             <h4>Written by: @Html.DisplayFor(model => model.UserName)</h4>
             <img src="@Html.DisplayFor(model => model.PostImage)" />
         </div>
@@ -21,7 +20,7 @@
         <h4>Comments</h4>
 
         @foreach (var comment in Model.PostComments)
-            {
+        {
             <h5>@Html.DisplayFor(modelItem => comment.UserName)</h5>
                 <h5>@Html.DisplayFor(modelItem => comment.CommentSubject)</h5>
                 <p>@Html.DisplayFor(modelItem => comment.CommentContent)</p>
@@ -32,9 +31,9 @@
                 </p>
         }
 
-        <p id="createPostButton">@Html.Action("Create", "Comment", new { id = Model.PostId })</p>
+        @Html.ActionLink("Create Comment &dagger;", "Create", "Comment", new { id = Model.PostId }, new {@class="btn redButton"})
 
-        <!--Comments attached to this post-->
+
         @*@=Html.RenderAction("Create", "Comments", new { postId = Model.PostId });*@
         @*@Html.Partial("Comments")*@
     </div>
