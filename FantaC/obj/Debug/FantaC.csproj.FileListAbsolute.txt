@@ -84,3 +84,15 @@ C:\Users\rober_000\Desktop\C#\fantaC\FantaC\obj\Debug\FantaC.Migrations.InitialC
 C:\Users\rober_000\Desktop\C#\fantaC\FantaC\obj\Debug\FantaC.csproj.GenerateResource.Cache
 C:\Users\rober_000\Desktop\C#\fantaC\FantaC\obj\Debug\FantaC.Migrations.textarea.resources
 C:\Users\rober_000\Desktop\C#\fantaC\FantaC\obj\Debug\FantaC.Migrations.comments.resources
+C:\Users\rober_000\Desktop\C#\fantaC\FantaC\bin\Microsoft.Threading.Tasks.dll
+C:\Users\rober_000\Desktop\C#\fantaC\FantaC\bin\Microsoft.Threading.Tasks.Extensions.Desktop.dll
+C:\Users\rober_000\Desktop\C#\fantaC\FantaC\bin\Microsoft.Threading.Tasks.Extensions.dll
+C:\Users\rober_000\Desktop\C#\fantaC\FantaC\bin\SendGrid.CSharp.HTTP.Client.dll
+C:\Users\rober_000\Desktop\C#\fantaC\FantaC\bin\SendGrid.dll
+C:\Users\rober_000\Desktop\C#\fantaC\FantaC\bin\SendGrid.SmtpApi.dll
+C:\Users\rober_000\Desktop\C#\fantaC\FantaC\bin\SendGridMail.dll
+C:\Users\rober_000\Desktop\C#\fantaC\FantaC\bin\System.Net.Http.Formatting.dll
+C:\Users\rober_000\Desktop\C#\fantaC\FantaC\bin\Microsoft.Threading.Tasks.xml
+C:\Users\rober_000\Desktop\C#\fantaC\FantaC\bin\Microsoft.Threading.Tasks.Extensions.xml
+C:\Users\rober_000\Desktop\C#\fantaC\FantaC\bin\Microsoft.Threading.Tasks.Extensions.Desktop.xml
+C:\Users\rober_000\Desktop\C#\fantaC\FantaC\bin\System.Net.Http.Formatting.xml
